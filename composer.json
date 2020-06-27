@@ -1,5 +1,5 @@
 {
-    "name": "mattsplat/readmore",
+    "name": "montopolis/readmore",
     "description": "A Laravel Nova field to hide long text and show when clicked.",
     "keywords": [
         "laravel",
