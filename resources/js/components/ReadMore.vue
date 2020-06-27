@@ -1,10 +1,10 @@
 <template>
     <div>
         <p @click="toggle" v-bind:class="{ 'pt-3 pb-3': showAll}">
-            {{ message }}
+            <span v-html="msg">{{ message }}</span>
             <span
-                    v-if="!showAll"
-                    class="read-more-mask"
+                v-if="!showAll"
+                class="read-more-mask"
             >
                 <span v-html="mask"></span>
             </span>
@@ -42,7 +42,7 @@
         computed: {
             message: function () {
 
-                if(this.text.length <= this.max || this.showAll){
+                if (this.text.length <= this.max || this.showAll) {
 
                     this.showAll = true
                     return this.text
@@ -58,7 +58,7 @@
 
         methods: {
             toggle() {
-                if(this.text.length <= this.max) return
+                if (this.text.length <= this.max) return
                 this.showAll = !this.showAll
             }
         }
@@ -70,6 +70,7 @@
         color: var(--primary);
         font-weight: 800;
     }
+
     .read-more-mask:hover {
         cursor: pointer;
         color: var(--primary-dark);
